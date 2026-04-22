@@ -1,0 +1,432 @@
+/* Love4Well bespoke page
+   Palette, fonts, and feel pulled directly from love4well.com.
+   Brand tokens only. No Eduba chrome at top. */
+
+:root {
+  --rose: #aa2259;
+  --plum: #381d6d;
+  --sage: #97c7b6;
+  --pink: #da5f92;
+  --cream: #e7e9c7;
+  --ink: #313131;
+  --bg: #ffffff;
+  --rule: rgba(56, 29, 109, 0.14);
+
+  --font-head: 'Gabriela', Georgia, serif;
+  --font-body: 'ABeeZee', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-accent: 'Dongle', 'Gabriela', serif;
+
+  --shadow-soft: 0 2px 8px rgba(56, 29, 109, 0.08);
+  --shadow-lift: 0 8px 24px rgba(56, 29, 109, 0.14);
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.7;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Soft brand wash so the page does not feel clinical */
+  background:
+    radial-gradient(ellipse 60% 40% at 85% 0%, rgba(218, 95, 146, 0.10), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 0% 100%, rgba(151, 199, 182, 0.18), transparent 60%),
+    radial-gradient(ellipse 70% 30% at 50% 120%, rgba(231, 233, 199, 0.55), transparent 60%),
+    var(--bg);
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 28px 22px 48px;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 0 28px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.brand-logo {
+  height: auto;
+  width: 120px;
+  max-width: 50%;
+}
+
+.tagline {
+  font-family: var(--font-head);
+  color: var(--plum);
+  margin: 0;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.pipe {
+  color: var(--rose);
+  margin: 0 4px;
+  font-weight: 400;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 44px 4px 28px;
+  text-align: left;
+  position: relative;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 11px;
+  color: var(--rose);
+  margin: 0 0 18px;
+}
+
+.hero h1 {
+  font-family: var(--font-head);
+  color: var(--plum);
+  font-size: 34px;
+  line-height: 1.22;
+  font-weight: 400;
+  margin: 0 0 14px;
+  letter-spacing: -0.005em;
+}
+
+.subhead {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--rose);
+  font-size: 16px;
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* Decorative moon phase row, echoes the site's astrology-adjacent imagery */
+.moon-row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-top: 28px;
+}
+
+.moon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--plum);
+  box-shadow: inset 6px 0 0 var(--cream);
+}
+.moon-1 { background: var(--cream); box-shadow: inset 0 0 0 1px var(--plum); }
+.moon-2 { box-shadow: inset 10px 0 0 var(--cream); }
+.moon-3 { box-shadow: inset 6px 0 0 var(--cream); }
+.moon-4 { box-shadow: inset 2px 0 0 var(--cream); }
+.moon-5 { background: var(--plum); }
+
+/* ---------- Pitch body ---------- */
+
+.pitch {
+  padding: 28px 0 8px;
+  border-top: 1px solid var(--rule);
+  margin-top: 8px;
+}
+
+.lead {
+  font-size: 18px;
+  color: var(--ink);
+  margin: 24px 0 34px;
+}
+
+.lead::first-letter {
+  font-family: var(--font-head);
+  color: var(--rose);
+  font-size: 44px;
+  float: left;
+  line-height: 0.9;
+  padding: 6px 10px 0 0;
+}
+
+/* Frame card (60 / 30 / 10) */
+
+.frame-card {
+  background: var(--cream);
+  border-radius: 24px;
+  padding: 28px 22px;
+  margin: 32px 0;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.frame-card::before {
+  content: "";
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(218, 95, 146, 0.28), transparent 70%);
+  pointer-events: none;
+}
+
+.frame-label {
+  font-family: var(--font-head);
+  color: var(--plum);
+  margin: 0 0 20px;
+  font-size: 17px;
+  letter-spacing: 0.02em;
+}
+
+.frame-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr;
+}
+
+.frame-item {
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid rgba(56, 29, 109, 0.06);
+}
+
+.pct {
+  font-family: var(--font-accent);
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 0.9;
+  color: var(--rose);
+}
+
+.frame-item:nth-child(2) .pct { color: var(--plum); }
+.frame-item:nth-child(3) .pct { color: #5a9f8a; }
+
+.frame-item p {
+  margin: 0;
+  font-size: 16px;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.frame-note {
+  margin: 22px 2px 0;
+  font-size: 15px;
+  color: var(--plum);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* Methodology */
+
+.methodology {
+  padding: 14px 0 6px;
+  margin: 26px 0 18px;
+}
+
+.methodology h2 {
+  font-family: var(--font-head);
+  color: var(--plum);
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 14px;
+}
+
+.methodology p {
+  margin: 0 0 16px;
+  font-size: 17px;
+}
+
+.links {
+  font-size: 15px;
+  color: var(--plum);
+}
+
+.links a {
+  color: var(--rose);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(170, 34, 89, 0.35);
+  padding-bottom: 1px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.links a:hover, .links a:focus {
+  color: var(--plum);
+  border-bottom-color: var(--plum);
+}
+
+.dot {
+  color: var(--sage);
+  margin: 0 8px;
+}
+
+/* Credibility */
+
+.credibility {
+  border-left: 3px solid var(--sage);
+  padding: 10px 16px;
+  margin: 28px 0 8px;
+  color: var(--plum);
+  font-size: 16px;
+  background: rgba(151, 199, 182, 0.12);
+  border-radius: 0 12px 12px 0;
+}
+
+/* ---------- CTA ---------- */
+
+.cta {
+  margin: 40px 0 28px;
+  padding: 32px 24px 30px;
+  background: linear-gradient(135deg, var(--plum) 0%, #4a2589 50%, var(--rose) 100%);
+  border-radius: 24px;
+  color: #fff;
+  box-shadow: var(--shadow-lift);
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::after {
+  content: "";
+  position: absolute;
+  bottom: -60px; left: -40px;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(151, 199, 182, 0.25), transparent 70%);
+  pointer-events: none;
+}
+
+.cta-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin: 0 0 8px;
+}
+
+.cta h2 {
+  font-family: var(--font-head);
+  font-weight: 400;
+  font-size: 30px;
+  margin: 0 0 10px;
+  color: #fff;
+}
+
+.cta-body {
+  margin: 0 0 22px;
+  color: #f5e9ef;
+  font-size: 16px;
+  max-width: 38em;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #fff;
+  color: var(--rose);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  padding: 14px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  min-height: 44px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.cta-button:hover, .cta-button:focus {
+  background: var(--cream);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  outline: none;
+}
+
+.cta-meta {
+  margin: 18px 0 0;
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+}
+
+.cta-meta a {
+  color: var(--sage);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(151, 199, 182, 0.5);
+}
+
+.cta-meta a:hover, .cta-meta a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  margin-top: 34px;
+  padding-top: 22px;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+}
+
+.prep {
+  font-size: 13px;
+  color: var(--plum);
+  margin: 0 0 6px;
+  letter-spacing: 0.04em;
+}
+
+.prep a {
+  color: var(--rose);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(170, 34, 89, 0.35);
+}
+
+.prep a:hover, .prep a:focus {
+  color: var(--plum);
+  border-bottom-color: var(--plum);
+}
+
+.prep-small {
+  font-size: 13px;
+  color: var(--ink);
+  opacity: 0.7;
+  max-width: 46em;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+/* ---------- Breakpoints ---------- */
+
+@media (min-width: 640px) {
+  .page { padding: 40px 32px 56px; }
+  .hero h1 { font-size: 42px; }
+  .frame-grid { grid-template-columns: repeat(3, 1fr); }
+  .cta h2 { font-size: 34px; }
+  .site-header { flex-direction: row; justify-content: space-between; }
+  .tagline { font-size: 14px; }
+}
+
+@media (min-width: 900px) {
+  .page { max-width: 820px; padding: 48px 40px 64px; }
+  .hero h1 { font-size: 46px; line-height: 1.18; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-button { transition: none; }
+  .cta-button:hover, .cta-button:focus { transform: none; }
+}
